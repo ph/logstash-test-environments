@@ -1,0 +1,8 @@
+---
+- hosts: all
+  sudo: yes
+  tasks:
+  - yum: name=* state=latest
+  - yum: name=/tmp/packages/current.rpm state=installed
+  - copy: src=testing.conf dest=/etc/logstash/conf.d/
+  - service: name=logstash state=restarted
