@@ -3,6 +3,7 @@ Simple playbook and vagrant files to test an installation of logstash on a speci
 
 # Warning
 - The ansible playbook should not be used on a production setup
+- If you want real provisioning see the official https://github.com/elasticsearch/puppet-logstash
 
 # Requirements
 - [Vagrant](http://vagrantup.com)
