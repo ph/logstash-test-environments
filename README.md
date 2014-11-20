@@ -2,9 +2,9 @@
 Simple playbook and vagrant files to test an installation of logstash on a specific linux distribution
 
 # Requirements
-
 - [Vagrant](http://vagrantup.com)
 - [Ansible](http://ansibleworks.com)
+- [Virtualbox](http://virtualbox.org)
 
 # How to run?
 - puts the logstash packages in the packages directory
