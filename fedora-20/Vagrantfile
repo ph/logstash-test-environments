@@ -12,5 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision 'ansible' do |ansible|
     ansible.playbook = '../provisioning/playbook_rpm.yml'
     ansible.verbose = 'v'
+    ENV['STEP'].split(',').each { |s| options[s.to_sym] = true } unless ENV['STEP'].nil?
+    ansible.extra_vars = options
   end
 end

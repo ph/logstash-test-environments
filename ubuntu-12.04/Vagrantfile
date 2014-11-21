@@ -10,8 +10,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.synced_folder "../packages", "/tmp/packages"
   config.vm.provision :shell, :inline => 'yum install -y python-simplejson'
+
+  config.vm.synced_folder "../packages", "/tmp/packages"
   config.vm.provision 'ansible' do |ansible|
     ansible.playbook = '../provisioning/playbook.yml'
     ansible.verbose = 'v'
+    options = {}
+    ENV['STEP'].split(',').each { |s| options[s.to_sym] = true } unless ENV['STEP'].nil?
+    ansible.extra_vars = options
   end
 end

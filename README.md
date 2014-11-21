@@ -15,6 +15,7 @@ Simple playbook and vagrant files to test an installation of logstash on a speci
 - create a symlink current.deb or current.rpm
 - cd distribution/
 - vagrant up
+- You can test uninstall and upgrade using env variable like `STEP=uninstall,upgrade vagrant up`
 
 # Defaults
 - It will install the required jvm
