@@ -9,7 +9,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = 'ubuntu12.04'
 
   config.vm.synced_folder "../packages", "/tmp/packages"
-  config.vm.provision :shell, :inline => 'yum install -y python-simplejson'
 
   config.vm.synced_folder "../packages", "/tmp/packages"
   config.vm.provision 'ansible' do |ansible|
